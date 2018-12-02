@@ -19,10 +19,16 @@ public class IngredientStorage {
     ArrayList<Ingredient> ingredients;
     
     /***
+     * the list of the item categories
+     */
+    ArrayList<String> categories;
+    
+    /***
      * Create an empty storage
      */
     public IngredientStorage() {
         this.ingredients = new ArrayList<>();
+        this.categories =  new ArrayList<>(); 
     }
     
     /***
@@ -33,6 +39,14 @@ public class IngredientStorage {
         this.ingredients.add(ingredient);
     }
 
+    /***
+     * Add a category to the storage
+     * @param category name of ingredient
+     */
+    public void addCategory(String category) {
+        this.categories.add(category);
+    }
+    
     /***
      * Method for returning an array list of ingredients of a certain type
      * @param type the type of the ingredient

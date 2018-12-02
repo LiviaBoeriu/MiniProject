@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 2, 2018, 6:32:23 PM
+    Author     : Livia
+*/
+.header {
+    -fx-alignment:CENTER;
+    -fx-content-display:center;
+    -fx-background-color: #637081;
+    -fx-padding: 10;
+}
+
+.headerText {
+    -fx-text-fill:white;
+}
+
+.mainView {
+    -fx-background-color: grey;
+}
+
+.ingredientView {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    
+}
+
+.recipeView {
+    -fx-background-color: bisque;
+    -fx-padding: 20;
+}
+
+.ingredientCard {
+    -fx-padding: 10 20 10 20;
+    -fx-border-width:1;
+    -fx-border-style:solid;
+    -fx-border-color:lightgray;
+}
+
+.categoryTitle {
+    -fx-border-width: 0 0 1 0;
+    -fx-border-style:solid;
+    -fx-border-color:lightgray;
+}
+
+.categoryIngredients {
+    -fx-padding:15 0 0 0;
+    -fx-alignment:CENTER_LEFT;   
+}
+
+.ingredientName {
+    -fx-padding:2 4 2 4;
+    -fx-border-width:1;
+    -fx-border-style:solid;
+    -fx-border-color:black;
+}
