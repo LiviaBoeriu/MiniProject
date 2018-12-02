@@ -1,7 +1,11 @@
 
 import java.util.ArrayList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.event.EventTarget;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
@@ -24,7 +28,7 @@ public class IngredientView extends BorderPane {
     public IngredientView() {       
         list.setSpacing(10);
         
-        this.setPrefWidth(300);
+        this.setPrefWidth(304);
         this.setCenter(list);
         this.getStyleClass().add("ingredientView");
         
@@ -48,8 +52,30 @@ public class IngredientView extends BorderPane {
             
             for(int j = 0; j < categoryIngredients.size(); j++) {
                 Ingredient currentIngredient = categoryIngredients.get(j);
+                
                 Label ingredientName = new Label(currentIngredient.name);
                 ingredientName.getStyleClass().add("ingredientName");
+                ingredientName.setMinWidth(70);
+
+                EventHandler<MouseEvent> labelClickedHandler = new EventHandler<MouseEvent> () {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        Object node = event.getSource(); //returns the object that generated the event
+                        Label ingredient = (Label)node;
+                        
+                        String ingredientName = ingredient.getText();
+                        
+                        if (!storage.isSelected(ingredientName)) {
+                            storage.addSelectedIngridient(ingredientName);
+                            ingredient.getStyleClass().add("selected");
+                        } else {
+                            storage.removeSelectedIngridient(ingredientName);
+                            ingredient.getStyleClass().remove("selected");
+                        }
+                    }
+                };
+
+                ingredientName.addEventHandler(MouseEvent.MOUSE_CLICKED, labelClickedHandler);
                 
                 categoryIngredientsContainer.getChildren().add(ingredientName);
             }

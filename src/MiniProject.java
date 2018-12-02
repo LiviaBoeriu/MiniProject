@@ -70,20 +70,48 @@ public class MiniProject extends Application{
     public static void main(String[] args) {
         IngredientStorage storage = getStorage();
 
-        Ingredient carrot = new Ingredient("carrot", "vegetable");
         Ingredient apple = new Ingredient("apple", "fruit");
+        Ingredient orange = new Ingredient("orange", "fruit");
+        Ingredient lemon = new Ingredient("lemon", "fruit");
+        Ingredient pineapple = new Ingredient("pineapple", "fruit");
         Ingredient strawberry = new Ingredient("strawberry", "fruit");
         Ingredient tomato = new Ingredient("tomato", "vegetable");
         Ingredient beetroot = new Ingredient("beetroot", "vegetable");
+        Ingredient eggplant = new Ingredient("eggplant", "vegetable");
+        Ingredient onion = new Ingredient("onion", "vegetable");
+        Ingredient carrot = new Ingredient("carrot", "vegetable");
+        Ingredient potato = new Ingredient("potato", "vegetable");
+        Ingredient corn = new Ingredient("corn", "vegetable");
+        Ingredient salt = new Ingredient("salt", "spice");
+        Ingredient peper = new Ingredient("peper", "spice");
+        Ingredient chilly = new Ingredient("chilly", "spice");
+        Ingredient basil = new Ingredient("basil", "spice");
+        Ingredient cinnamon = new Ingredient("cinnamon", "spice");
         
-        storage.add(carrot);
+        //fruits
+        storage.add(apple);
+        storage.add(orange);
+        storage.add(lemon);
+        storage.add(pineapple);
+        storage.add(strawberry);
+        //vegetables
         storage.add(tomato);
         storage.add(beetroot);
-        storage.add(apple);
-        storage.add(strawberry);
+        storage.add(eggplant);
+        storage.add(onion);
+        storage.add(carrot);
+        storage.add(potato);
+        storage.add(corn);
+        //spices
+        storage.add(salt);
+        storage.add(peper);
+        storage.add(chilly);
+        storage.add(basil);
+        storage.add(cinnamon);
         
-        storage.addCategory("vegetable");
         storage.addCategory("fruit");
+        storage.addCategory("vegetable");
+        storage.addCategory("spice");
         
         launch(args);
     }
