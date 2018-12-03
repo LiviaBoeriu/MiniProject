@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Livia
+ * @author Livia Boeriu
  */
 public class Ingredient {
     

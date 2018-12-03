@@ -18,7 +18,7 @@ import javafx.scene.layout.VBox;
 
 /**
  *
- * @author boeri
+ * @author Livia Boeriu
  */
 public class IngredientView extends BorderPane {
     

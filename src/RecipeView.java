@@ -11,7 +11,7 @@ import javafx.scene.layout.VBox;
 
 /**
  *
- * @author boeri
+ * @author Livia Boeriu
  */
 public class RecipeView extends BorderPane {
     

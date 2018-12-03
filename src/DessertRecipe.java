@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Livia
+ * @author Livia Boeriu
  */
 public class DessertRecipe extends Recipe {
    

@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Livia
+ * @author Livia Boeriu
  */
 public class MiniProject extends Application{
     
