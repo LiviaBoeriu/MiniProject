@@ -96,7 +96,7 @@ public class MiniProject extends Application{
         Ingredient egg = new Ingredient("egg", "dairy");
         Ingredient heavyCream = new Ingredient("cream", "dairy");
         Ingredient parmesan = new Ingredient("parmesan", "dairy");
-        Ingredient breadcrumbs = new Ingredient("breadcrumbs", "grain");
+        Ingredient breadcrumbs = new Ingredient("bread crumbs", "grain");
         Ingredient chicken = new Ingredient("chicken", "meat");
         Ingredient pork = new Ingredient("pork", "meat");
         

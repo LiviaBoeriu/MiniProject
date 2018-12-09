@@ -69,6 +69,10 @@ public class IngredientView extends BorderPane {
                             storage.removeSelectedIngridient(ingredientName);
                             ingredient.getStyleClass().remove("selected");
                         }
+                        
+                        RecipeGlossary glossary = MiniProject.getGlossary();
+                        ArrayList<Recipe> filteredRecipes = glossary.filterRecipes(storage.selectedIngredients);
+                        RecipeView.createRecipeView(filteredRecipes);
                     }
                 };
 

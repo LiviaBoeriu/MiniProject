@@ -15,8 +15,20 @@ import javafx.scene.layout.VBox;
  */
 public class RecipeView extends BorderPane {
     
-    VBox list = new VBox();
-        
+    static VBox list = new VBox();
+    
+    /**
+     * Method to get the VBox wrapper in order to put elements from the recipe view on it
+     * @return the main list wrapper
+     */
+    public static VBox getListWrapper() {
+        return list;
+    }
+    
+    /**
+     * The constructor for the recipeView in which the glossary and recipe list are called
+     * and the elements are set to the main container
+     */
     public RecipeView() {
         list.setSpacing(10);
         
@@ -24,9 +36,25 @@ public class RecipeView extends BorderPane {
         RecipeGlossary glossary = MiniProject.getGlossary();
         ArrayList<Recipe> recipeList = glossary.recipes;
         
+        createRecipeView(recipeList);
+
+        
+        this.setCenter(list);
+        this.getStyleClass().add("recipeView");
+    }
+    
+    /**
+     * Method for creating the recipe list view, because it needs to be called every time
+     * you select a new ingredient
+     * @param recipes 
+     */
+    public static void createRecipeView(ArrayList<Recipe> recipes) {
+        VBox list = getListWrapper();
+        list.getChildren().clear();
+        
         //for every recipe create a wrapper
-        for(int i = 0; i < recipeList.size(); i++) {
-            Recipe currentRecipe = recipeList.get(i);
+        for(int i = 0; i < recipes.size(); i++) {
+            Recipe currentRecipe = recipes.get(i);
             
             //create the main wrapper
             BorderPane recipeWrapper = new BorderPane();
@@ -76,11 +104,6 @@ public class RecipeView extends BorderPane {
             recipeWrapper.setBottom(suggestion);
             
             list.getChildren().add(recipeWrapper);
-        };
-        
-        
-        
-        this.setCenter(list);
-        this.getStyleClass().add("recipeView");
+        }
     }
 }

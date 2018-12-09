@@ -34,4 +34,51 @@ public class RecipeGlossary {
     public ArrayList<Recipe> getAll() {
         return recipes;
     }
+    
+    public ArrayList<Recipe> filterRecipes(ArrayList<String> selectedIngredients) {
+        System.out.println(selectedIngredients.size());
+        if(selectedIngredients.isEmpty()) {
+            return this.getAll();
+        } 
+        
+        ArrayList<Recipe> filteredRecipes = new ArrayList <Recipe>();
+        
+        for (int i = 0; i < this.recipes.size(); i++) {
+            Recipe currentRecipe = this.recipes.get(i);
+            ArrayList<Ingredient> currentRecipeIngredients = currentRecipe.getIngredients();
+            boolean hasAllIngredients = false;
+            
+            for (int j = 0; j < selectedIngredients.size(); j++) {
+                boolean hasIngredient = false;
+                
+                for (int k = 0; k < currentRecipeIngredients.size(); k++) {
+                    if(selectedIngredients.get(j).equals(currentRecipeIngredients.get(k).name)) {
+                        hasIngredient = true;
+                        break;
+                    }
+                }
+                
+                // if the current item from 'selectedIngredients' is not in the recipeIngredients
+                // we break the loop because there's no point to continue
+                if (!hasIngredient) {
+                    break;
+                }
+                
+                
+                // if we got to the last item that means that all the items prior to this one
+                // are found in the list
+                // if this ingredient is in the list aswell, we can say that the recipe has
+                // all the ingredients
+                if (j == selectedIngredients.size() - 1 && hasIngredient) {
+                    hasAllIngredients = true;
+                }
+            }
+            
+            if (hasAllIngredients) {
+                filteredRecipes.add(currentRecipe);
+            }
+        }
+        
+        return filteredRecipes;
+    }
 }
