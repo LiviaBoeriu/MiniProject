@@ -99,6 +99,7 @@ public class MiniProject extends Application{
         Ingredient breadcrumbs = new Ingredient("bread crumbs", "grain");
         Ingredient chicken = new Ingredient("chicken", "meat");
         Ingredient pork = new Ingredient("pork", "meat");
+        Ingredient flour = new Ingredient("flour", "grain");
         
         //fruits
         storage.add(apple);
@@ -129,6 +130,7 @@ public class MiniProject extends Application{
         storage.add(parmesan);
         //grain
         storage.add(breadcrumbs);
+        storage.add(flour);
         //meat
         storage.add(chicken);
         storage.add(pork);
@@ -157,9 +159,18 @@ public class MiniProject extends Application{
         garlicChickenIngredients.add(lemon);
         MeatRecipe garlicChicken = new MeatRecipe("Garlic Chicken", garlicChickenIngredients, chicken, 40, "Crunchy garlic chicken");
         
+        //meat recipe
+        ArrayList<Ingredient> wienerSchnitzelIngredients = new ArrayList<>();
+        wienerSchnitzelIngredients.add(egg);
+        wienerSchnitzelIngredients.add(breadcrumbs);
+        wienerSchnitzelIngredients.add(flour);
+        wienerSchnitzelIngredients.add(chicken);
+        MeatRecipe wienerSchnitzel = new MeatRecipe("Wiener Schnitzel", wienerSchnitzelIngredients, chicken, 40, "Crispy wiener Schnitzel");
+        
         //add recipes to glossary
         glossary.add(cremeBrulee);
         glossary.add(garlicChicken);
+        glossary.add(wienerSchnitzel);
         
         launch(args);
     }
