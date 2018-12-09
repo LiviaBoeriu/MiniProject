@@ -35,9 +35,9 @@ public class MeatRecipe extends Recipe{
      */
     @Override
     public String getSuggestion() {
-        String suggestion = "Meat - ";
+        String suggestion = "";
         switch(this.mainIngredient.name) {
-            case "salad": suggestion +=  "Suggestion 1 ";
+            case "chicken": suggestion +=  "This is working!!!!! Good Job Bitch ";
                 break;
             case "potato": suggestion += "Suggestion 2 ";
                 break;

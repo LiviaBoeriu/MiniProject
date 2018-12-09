@@ -1,9 +1,6 @@
 
 import java.util.ArrayList;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.event.EventTarget;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -28,7 +25,7 @@ public class IngredientView extends BorderPane {
     public IngredientView() {       
         list.setSpacing(10);
         
-        this.setPrefWidth(304);
+        this.setPrefWidth(308);
         this.setCenter(list);
         this.getStyleClass().add("ingredientView");
         

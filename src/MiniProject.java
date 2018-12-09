@@ -5,6 +5,7 @@
  */
 
 
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
 public class MiniProject extends Application{
     
     public static IngredientStorage storage = new IngredientStorage();
+    public static RecipeGlossary glossary = new RecipeGlossary();
     
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -69,6 +71,7 @@ public class MiniProject extends Application{
      */
     public static void main(String[] args) {
         IngredientStorage storage = getStorage();
+        RecipeGlossary glossary = getGlossary();
 
         Ingredient apple = new Ingredient("apple", "fruit");
         Ingredient orange = new Ingredient("orange", "fruit");
@@ -81,12 +84,21 @@ public class MiniProject extends Application{
         Ingredient onion = new Ingredient("onion", "vegetable");
         Ingredient carrot = new Ingredient("carrot", "vegetable");
         Ingredient potato = new Ingredient("potato", "vegetable");
+        Ingredient garlic = new Ingredient("garlic", "vegetable");
         Ingredient corn = new Ingredient("corn", "vegetable");
         Ingredient salt = new Ingredient("salt", "spice");
         Ingredient peper = new Ingredient("peper", "spice");
         Ingredient chilly = new Ingredient("chilly", "spice");
         Ingredient basil = new Ingredient("basil", "spice");
         Ingredient cinnamon = new Ingredient("cinnamon", "spice");
+        Ingredient sugar = new Ingredient("sugar", "spice");
+        Ingredient vanilla = new Ingredient("vanilla", "spice");
+        Ingredient egg = new Ingredient("egg", "dairy");
+        Ingredient heavyCream = new Ingredient("cream", "dairy");
+        Ingredient parmesan = new Ingredient("parmesan", "dairy");
+        Ingredient breadcrumbs = new Ingredient("breadcrumbs", "grain");
+        Ingredient chicken = new Ingredient("chicken", "meat");
+        Ingredient pork = new Ingredient("pork", "meat");
         
         //fruits
         storage.add(apple);
@@ -102,22 +114,62 @@ public class MiniProject extends Application{
         storage.add(carrot);
         storage.add(potato);
         storage.add(corn);
+        storage.add(garlic);
         //spices
         storage.add(salt);
         storage.add(peper);
         storage.add(chilly);
         storage.add(basil);
         storage.add(cinnamon);
+        storage.add(sugar);
+        storage.add(vanilla);
+        //dairy
+        storage.add(egg);
+        storage.add(heavyCream);
+        storage.add(parmesan);
+        //grain
+        storage.add(breadcrumbs);
+        //meat
+        storage.add(chicken);
+        storage.add(pork);
         
         storage.addCategory("fruit");
         storage.addCategory("vegetable");
         storage.addCategory("spice");
+        storage.addCategory("dairy");
+        storage.addCategory("grain");
+        storage.addCategory("meat");
+        
+        //dessert recipe
+        ArrayList<Ingredient> cremeBruleeIngredients = new ArrayList<>();
+        cremeBruleeIngredients.add(sugar);
+        cremeBruleeIngredients.add(egg);
+        cremeBruleeIngredients.add(heavyCream);
+        cremeBruleeIngredients.add(vanilla);
+        DessertRecipe cremeBrulee = new DessertRecipe("Creme Brulee", cremeBruleeIngredients, sugar, 180, "Simple Creme Brulee Dessert");
+        
+        //meat recipe
+        ArrayList<Ingredient> garlicChickenIngredients = new ArrayList<>();
+        garlicChickenIngredients.add(parmesan);
+        garlicChickenIngredients.add(breadcrumbs);
+        garlicChickenIngredients.add(garlic);
+        garlicChickenIngredients.add(chicken);
+        garlicChickenIngredients.add(lemon);
+        MeatRecipe garlicChicken = new MeatRecipe("Garlic Chicken", garlicChickenIngredients, chicken, 40, "Crunchy garlic chicken");
+        
+        //add recipes to glossary
+        glossary.add(cremeBrulee);
+        glossary.add(garlicChicken);
         
         launch(args);
     }
     
     public static IngredientStorage getStorage() {
         return storage;
+    }
+    
+    public static RecipeGlossary getGlossary() {
+        return glossary;
     }
     
 }

@@ -30,12 +30,12 @@ public class DessertRecipe extends Recipe {
     }
     
     /**
-     * Method for suggesting ingredient that would with the recipe
+     * Method for suggesting ingredient that would go well with the recipe
      * @return the suggestion for the specific recipe
      */
         @Override
     public String getSuggestion() {
-        String suggestion = "Dessert - ";
+        String suggestion = "";
         switch(this.mainIngredient.name) {
             case "chocolate": suggestion +=  "Suggestion 1 ";
                 break;
