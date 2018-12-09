@@ -8,7 +8,9 @@ import java.util.ArrayList;
  */
 
 /**
- *
+ * This class provides the structure for the recipe object
+ * In here there are methods for getting the details of the recipe such as 
+ * name and description.
  * @author Livia Boeriu
  */
 public abstract class Recipe {

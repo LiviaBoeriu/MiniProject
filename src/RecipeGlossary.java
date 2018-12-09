@@ -8,7 +8,8 @@ import java.util.ArrayList;
  */
 
 /**
- *
+ * This class holds the recipes in the program and has methods such ass
+ * add a recipe tot the list and get the array list of recipes.
  * @author Livia Boeriu
  */
 public class RecipeGlossary {

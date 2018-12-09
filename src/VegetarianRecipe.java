@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 
 /**
- *
+ * 
  * @author Livia Boeriu
  */
 public class VegetarianRecipe extends Recipe{
