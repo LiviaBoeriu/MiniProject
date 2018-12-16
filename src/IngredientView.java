@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
@@ -19,9 +20,11 @@ import javafx.scene.layout.VBox;
  */
 public class IngredientView extends BorderPane {
     
-    VBox list = new VBox();
-     
-    
+    VBox list = new VBox();  
+ 
+    /**
+     * Constructor for creating the sidebar list with the ingredients
+     */
     public IngredientView() {       
         list.setSpacing(10);
         

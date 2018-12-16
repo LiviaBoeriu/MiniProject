@@ -85,20 +85,26 @@ public class MiniProject extends Application{
         Ingredient carrot = new Ingredient("carrot", "vegetable");
         Ingredient potato = new Ingredient("potato", "vegetable");
         Ingredient garlic = new Ingredient("garlic", "vegetable");
+        Ingredient tomatoSauce = new Ingredient("tomatoSauce", "vegetable");
         Ingredient corn = new Ingredient("corn", "vegetable");
         Ingredient salt = new Ingredient("salt", "spice");
         Ingredient peper = new Ingredient("peper", "spice");
         Ingredient chilly = new Ingredient("chilly", "spice");
         Ingredient basil = new Ingredient("basil", "spice");
         Ingredient cinnamon = new Ingredient("cinnamon", "spice");
+        Ingredient curry = new Ingredient("curry", "spice");
         Ingredient sugar = new Ingredient("sugar", "spice");
         Ingredient vanilla = new Ingredient("vanilla", "spice");
         Ingredient egg = new Ingredient("egg", "dairy");
         Ingredient heavyCream = new Ingredient("cream", "dairy");
         Ingredient parmesan = new Ingredient("parmesan", "dairy");
+        Ingredient creamCheese = new Ingredient("creamCheese", "dairy");
+        Ingredient mozzarella = new Ingredient("mozzarella", "dairy");
         Ingredient breadcrumbs = new Ingredient("bread crumbs", "grain");
         Ingredient chicken = new Ingredient("chicken", "meat");
         Ingredient pork = new Ingredient("pork", "meat");
+        Ingredient salmon = new Ingredient("salmon", "meat");
+        Ingredient beef = new Ingredient("beef", "meat");
         Ingredient flour = new Ingredient("flour", "grain");
         
         //fruits
@@ -116,6 +122,7 @@ public class MiniProject extends Application{
         storage.add(potato);
         storage.add(corn);
         storage.add(garlic);
+        storage.add(tomatoSauce);
         //spices
         storage.add(salt);
         storage.add(peper);
@@ -124,16 +131,21 @@ public class MiniProject extends Application{
         storage.add(cinnamon);
         storage.add(sugar);
         storage.add(vanilla);
+        storage.add(curry);
         //dairy
         storage.add(egg);
         storage.add(heavyCream);
         storage.add(parmesan);
+        storage.add(mozzarella);
+        storage.add(creamCheese);
         //grain
         storage.add(breadcrumbs);
         storage.add(flour);
         //meat
         storage.add(chicken);
         storage.add(pork);
+        storage.add(salmon);
+        storage.add(beef);
         
         storage.addCategory("fruit");
         storage.addCategory("vegetable");
@@ -167,10 +179,39 @@ public class MiniProject extends Application{
         wienerSchnitzelIngredients.add(chicken);
         MeatRecipe wienerSchnitzel = new MeatRecipe("Wiener Schnitzel", wienerSchnitzelIngredients, chicken, 40, "Crispy wiener Schnitzel");
         
+        //beef recipe
+        ArrayList<Ingredient> pizzaRoll = new ArrayList<>();
+        pizzaRoll.add(mozzarella);
+        pizzaRoll.add(beef);
+        pizzaRoll.add(tomatoSauce);
+        MeatRecipe pizzaBeefRoll = new MeatRecipe("Pizza Beef Rolls", pizzaRoll, beef, 35, "Pizza Rolls with beef and tomato sauce");
+        
+        //dessert recipe
+        ArrayList<Ingredient> cheesecake = new ArrayList<>();
+        cheesecake.add(egg);
+        cheesecake.add(sugar);
+        cheesecake.add(lemon);
+        cheesecake.add(vanilla);
+        cheesecake.add(creamCheese);
+        DessertRecipe cheesecakeLemon = new DessertRecipe("Lemon Cheesecake", cheesecake, lemon, 60, "Creamy cheesecake with lemon flavour");
+        
+        //vegetarian recipe
+        ArrayList<Ingredient> potatoCurry = new ArrayList<>();
+        potatoCurry.add(potato);
+        potatoCurry.add(garlic);
+        potatoCurry.add(curry);
+        potatoCurry.add(chilly);
+        potatoCurry.add(onion);
+        VegetarianRecipe potatoCurryVeg = new VegetarianRecipe("Potato and lentil curry", potatoCurry, potato, 45, "Spicy potato and curry vegetarian recipe");
+        
         //add recipes to glossary
         glossary.add(cremeBrulee);
         glossary.add(garlicChicken);
         glossary.add(wienerSchnitzel);
+        glossary.add(pizzaBeefRoll);
+        glossary.add(cheesecakeLemon);
+        glossary.add(potatoCurryVeg);
+//        glossary.add(salmon); to add the salmon recipe
         
         launch(args);
     }

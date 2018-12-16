@@ -37,11 +37,15 @@ public class MeatRecipe extends Recipe{
     public String getSuggestion() {
         String suggestion = "";
         switch(this.mainIngredient.name) {
-            case "chicken": suggestion +=  "This is working!!!!! Good Job Bitch ";
+            case "chicken": suggestion +=  "Chicken goes well with white wine. Try a Chardonnay or Pinot Gris. ";
                 break;
-            case "potato": suggestion += "Suggestion 2 ";
+            case "pork": suggestion += "Recipes based on pork go well with both white and red wines. Try pairing the dish with \n Chardonnay, Pinot Noir or Riesling. ";
                 break;
-            case "carrot": suggestion += "Suggestion 3 ";
+            case "salmon": suggestion += "Fish goes well with full-bodied white wine. Try complementing your dish with a \n White Burgundy, Viognier.";
+                break;
+            case "beef": suggestion += "Beef is a versatile ingredient so it goes well with many types of wine. \n Best combinations for you dish are: Shiraz or Cabernet Sauvignon.";
+                break;
+            case "lamb": suggestion += "Lamb based dishes are well complimented by a red wine. Try pairing with a \n Cabernet Sauvignon, Zinfandel or Merlot";
                 break;
             default: suggestion += "";    
             

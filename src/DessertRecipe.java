@@ -37,11 +37,13 @@ public class DessertRecipe extends Recipe {
     public String getSuggestion() {
         String suggestion = "";
         switch(this.mainIngredient.name) {
-            case "chocolate": suggestion +=  "Suggestion 1 ";
+            case "chocolate": suggestion +=  "As the color of the desert gets darker, the way gets darker too. \n Keep this in mind when pairing desserts with wine. ";
                 break;
-            case "berries": suggestion += "Suggestion 2 ";
+            case "lemon": suggestion += "For lemon based desserts Prosseco works best. \n";
                 break;
-            case "icecream": suggestion += "Suggestion 3 ";
+            case "icecream": suggestion += "Depending on the icecream flavour you could combine the dessert with many different drinks. \n For cherry flavours try a Pale Ale, and for caramel pair with whiskey.";
+                break;
+            case "vanilla": suggestion += "For vanilla based desserts try having a Martini or for non alchoolic drinks \n sparkling water.";
                 break;
             default: suggestion += "";    
             

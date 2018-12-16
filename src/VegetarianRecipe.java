@@ -37,11 +37,11 @@ public class VegetarianRecipe extends Recipe{
     public String getSuggestion() {
         String suggestion = "";
         switch(this.mainIngredient.name) {
-            case "salad": suggestion +=  "Suggestion 1 ";
+            case "salad": suggestion +=  "The most important ingredient when making a salad is of course the dressing.";
                 break;
-            case "potato": suggestion += "Suggestion 2 ";
+            case "potato": suggestion += "Potatoes can be cooked in every way imaginable. The healthiest one though is baking or boiling them. ";
                 break;
-            case "carrot": suggestion += "Suggestion 3 ";
+            case "carrot": suggestion += " ";
                 break;
             default: suggestion += "";    
             

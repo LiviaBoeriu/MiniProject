@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -31,6 +32,9 @@ public class RecipeView extends BorderPane {
      */
     public RecipeView() {
         list.setSpacing(10);
+        ScrollPane scrollPane = new ScrollPane(list);
+        scrollPane.setFitToHeight(true);
+        scrollPane.setFitToWidth(true);
         
         //get recipes
         RecipeGlossary glossary = MiniProject.getGlossary();
@@ -39,7 +43,7 @@ public class RecipeView extends BorderPane {
         createRecipeView(recipeList);
 
         
-        this.setCenter(list);
+        this.setCenter(scrollPane);
         this.getStyleClass().add("recipeView");
     }
     
@@ -50,6 +54,7 @@ public class RecipeView extends BorderPane {
      */
     public static void createRecipeView(ArrayList<Recipe> recipes) {
         VBox list = getListWrapper();
+
         list.getChildren().clear();
         
         //for every recipe create a wrapper
