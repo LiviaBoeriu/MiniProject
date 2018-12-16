@@ -1,14 +1,7 @@
-
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * This class contains the constructor and methods for the meat recipe type of objects
  * @author Livia Boeriu
  */
 public class MeatRecipe extends Recipe{
@@ -43,7 +36,7 @@ public class MeatRecipe extends Recipe{
                 break;
             case "salmon": suggestion += "Fish goes well with full-bodied white wine. Try complementing your dish with a \n White Burgundy, Viognier.";
                 break;
-            case "beef": suggestion += "Beef is a versatile ingredient so it goes well with many types of wine. \n Best combinations for you dish are: Shiraz or Cabernet Sauvignon.";
+            case "beef": suggestion += "Beef is a versatile ingredient so it goes well with many types of wine. Best combinations for you dish are: Shiraz or Cabernet \n Sauvignon.";
                 break;
             case "lamb": suggestion += "Lamb based dishes are well complimented by a red wine. Try pairing with a \n Cabernet Sauvignon, Zinfandel or Merlot";
                 break;

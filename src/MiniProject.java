@@ -1,10 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -14,7 +7,8 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
- *
+ * In here the main stage is created along with the main method in the project
+ * and the start method for the UI to show.
  * @author Livia Boeriu
  */
 public class MiniProject extends Application{
@@ -46,7 +40,7 @@ public class MiniProject extends Application{
         header.getChildren().add(headerText);
         
         //create set the mainWindow Border Pane as the main scene for the view
-        Scene scene = new Scene(mainWindow, 1000, 800);
+        Scene scene = new Scene(mainWindow, 1300, 800);
         
         //set the elements in the mainWindow border pane
         mainWindow.setTop(header);
@@ -85,8 +79,9 @@ public class MiniProject extends Application{
         Ingredient carrot = new Ingredient("carrot", "vegetable");
         Ingredient potato = new Ingredient("potato", "vegetable");
         Ingredient garlic = new Ingredient("garlic", "vegetable");
-        Ingredient tomatoSauce = new Ingredient("tomatoSauce", "vegetable");
+        Ingredient tomatoSauce = new Ingredient("tomato sauce", "vegetable");
         Ingredient corn = new Ingredient("corn", "vegetable");
+        Ingredient salad = new Ingredient("salad", "vegetable");
         Ingredient salt = new Ingredient("salt", "spice");
         Ingredient peper = new Ingredient("peper", "spice");
         Ingredient chilly = new Ingredient("chilly", "spice");
@@ -98,7 +93,7 @@ public class MiniProject extends Application{
         Ingredient egg = new Ingredient("egg", "dairy");
         Ingredient heavyCream = new Ingredient("cream", "dairy");
         Ingredient parmesan = new Ingredient("parmesan", "dairy");
-        Ingredient creamCheese = new Ingredient("creamCheese", "dairy");
+        Ingredient creamCheese = new Ingredient("cream cheese", "dairy");
         Ingredient mozzarella = new Ingredient("mozzarella", "dairy");
         Ingredient breadcrumbs = new Ingredient("bread crumbs", "grain");
         Ingredient chicken = new Ingredient("chicken", "meat");
@@ -123,6 +118,7 @@ public class MiniProject extends Application{
         storage.add(corn);
         storage.add(garlic);
         storage.add(tomatoSauce);
+        storage.add(salad);
         //spices
         storage.add(salt);
         storage.add(peper);
@@ -147,6 +143,7 @@ public class MiniProject extends Application{
         storage.add(salmon);
         storage.add(beef);
         
+        //add categories to storage
         storage.addCategory("fruit");
         storage.addCategory("vegetable");
         storage.addCategory("spice");
@@ -204,6 +201,14 @@ public class MiniProject extends Application{
         potatoCurry.add(onion);
         VegetarianRecipe potatoCurryVeg = new VegetarianRecipe("Potato and lentil curry", potatoCurry, potato, 45, "Spicy potato and curry vegetarian recipe");
         
+        //vegetarian recipe
+        ArrayList<Ingredient> vegetarianCaesar = new ArrayList<>();
+        vegetarianCaesar.add(salad);
+        vegetarianCaesar.add(lemon);
+        vegetarianCaesar.add(salt);
+        vegetarianCaesar.add(tomato);
+        VegetarianRecipe vegetarianCaesarSalad = new VegetarianRecipe("Vegetarian Caesar Salad", vegetarianCaesar, salad, 10, "Your favourite Caesar salad without chicken");
+        
         //add recipes to glossary
         glossary.add(cremeBrulee);
         glossary.add(garlicChicken);
@@ -211,15 +216,23 @@ public class MiniProject extends Application{
         glossary.add(pizzaBeefRoll);
         glossary.add(cheesecakeLemon);
         glossary.add(potatoCurryVeg);
-//        glossary.add(salmon); to add the salmon recipe
+        glossary.add(vegetarianCaesarSalad);
         
         launch(args);
     }
     
+    /**
+     * Method to get the global storage from main
+     * @return storage
+     */
     public static IngredientStorage getStorage() {
         return storage;
     }
     
+    /**
+     * Method for getting the global recipe glossary
+     * @return glossary
+     */
     public static RecipeGlossary getGlossary() {
         return glossary;
     }

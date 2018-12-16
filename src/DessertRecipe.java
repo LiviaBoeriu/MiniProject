@@ -1,14 +1,7 @@
-
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * This class contains the constructor and method for the dessert recipe objects
  * @author Livia Boeriu
  */
 public class DessertRecipe extends Recipe {
@@ -30,7 +23,7 @@ public class DessertRecipe extends Recipe {
     }
     
     /**
-     * Method for suggesting ingredient that would go well with the recipe
+     * Method for suggesting in accordance with the main ingredient in the recipe
      * @return the suggestion for the specific recipe
      */
         @Override

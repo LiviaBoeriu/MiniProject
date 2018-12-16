@@ -1,11 +1,4 @@
-
 import java.util.ArrayList;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  * This class holds the recipes in the program and has methods such ass
@@ -35,13 +28,36 @@ public class RecipeGlossary {
         return recipes;
     }
     
+    /**
+     * Getting the recipe from the glossary by it's name
+     * @param name a string parameter called name
+     * @return return the recipe by the string of the name
+     */
+    public Recipe getRecipeByName(String name) {
+        Recipe recipeByName = recipes.get(0);
+        ArrayList<Recipe> recipes = this.getAll();
+        
+        for(int i = 0; i < recipes.size(); i++){
+            if(recipes.get(i).name.equalsIgnoreCase(name)) {
+                recipeByName = recipes.get(i);
+                break;
+            }
+        }
+        return recipeByName;
+    }
+    
+    /**
+     * Filters the recipes in the glossary by the ingredients selected
+     * @param selectedIngredients an array to hold the selected ingredients
+     * @return returns the recipes after the filtering 
+     */
     public ArrayList<Recipe> filterRecipes(ArrayList<String> selectedIngredients) {
         System.out.println(selectedIngredients.size());
         if(selectedIngredients.isEmpty()) {
             return this.getAll();
         } 
         
-        ArrayList<Recipe> filteredRecipes = new ArrayList <Recipe>();
+        ArrayList<Recipe> filteredRecipes = new ArrayList<>();
         
         for (int i = 0; i < this.recipes.size(); i++) {
             Recipe currentRecipe = this.recipes.get(i);
@@ -78,7 +94,6 @@ public class RecipeGlossary {
                 filteredRecipes.add(currentRecipe);
             }
         }
-        
         return filteredRecipes;
     }
 }

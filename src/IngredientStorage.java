@@ -1,14 +1,8 @@
-
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * This class contains the constructor and methods for the ingredient storage type of object
+ * which hold inside the ingredients in the program.
  * @author Livia Boeriu
  */
 public class IngredientStorage {
@@ -29,7 +23,7 @@ public class IngredientStorage {
     ArrayList<String> selectedIngredients;
     
     /***
-     * Create an empty storage
+     * Constructor for creating an empty storage
      */
     public IngredientStorage() {
         this.ingredients = new ArrayList<>();

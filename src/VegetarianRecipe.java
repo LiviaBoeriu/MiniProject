@@ -1,18 +1,10 @@
-
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * 
+ * This class contains the constructor and the methods for the vegetarian recipe type of objects.
  * @author Livia Boeriu
  */
-public class VegetarianRecipe extends Recipe{
-    
+public class VegetarianRecipe extends Recipe{   
     /**
      * Constructor for the recipe object
      * @param name the name of the recipe

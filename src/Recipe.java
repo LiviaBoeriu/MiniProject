@@ -1,14 +1,7 @@
-
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * This class provides the structure for the recipe object
+ * This class is an abstract class which provides the structure for the recipe type of object
  * In here there are methods for getting the details of the recipe such as 
  * name and description.
  * @author Livia Boeriu
@@ -20,9 +13,10 @@ public abstract class Recipe {
     String description;
     int time;
     Ingredient mainIngredient;
+    int spiciness;
     
      /**
-     * Abstract method for setting the cooking time
+     * Abstract method for getting the suggestion from the switch case
      */
     public abstract String getSuggestion();
     
@@ -43,11 +37,19 @@ public abstract class Recipe {
     }
     
     /**
-     * Method for setting the description of the recipe
-     * @param description the string representing the description of the recipe
+     * Method for setting the spiciness of the recipe
+     * @param spiciness the string representing the description of the recipe
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setSpiciness(int spiciness) {
+        this.spiciness = spiciness;
+    }
+    
+    /**
+     * Method for getting the level of spiciness of a recipe
+     * @return spiciness the integer representing the spiciness of the recipe
+     */
+    public int getSpiciness() {
+        return spiciness;
     }
     
     /**
@@ -58,6 +60,10 @@ public abstract class Recipe {
         return description;
     }
     
+    /**
+     * Method for getting the cooking time of a recipe
+     * @return time the integer representing the time in minutes needed for cooking
+     */
     public int getTime() {
         return time;
     }
